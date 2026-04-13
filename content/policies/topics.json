@@ -1,0 +1,24 @@
+{
+  "topics": [
+    {
+      "id": "shipping",
+      "title": "Shipping times",
+      "body": "Standard shipping typically arrives within 5–7 business days after your order ships. In this Bookly prototype there is no paid expedited or 2-day shipping option—only standard shipping as described here. You’ll receive tracking information by email when the order ships."
+    },
+    {
+      "id": "returns",
+      "title": "Returns and refunds",
+      "body": "Most new, unread books can be returned within 30 days of delivery if they’re in resalable condition. Refunds are issued after we receive and inspect the return. After a refund is marked completed in our system, funds usually reach the original payment method within about five business days, depending on your bank or card issuer. Digital items and opened consumables may not be eligible unless required by law."
+    },
+    {
+      "id": "password_reset",
+      "title": "Password reset",
+      "body": "On the Bookly sign-in page, choose “Forgot password,” enter your email, and follow the link we send you. If you don’t see the email within a few minutes, check spam and confirm you used the same address as your Bookly account."
+    },
+    {
+      "id": "contact",
+      "title": "Contact and hours",
+      "body": "Cam, Bookly’s concierge, is available in chat seven days a week: Monday–Friday 8:00 a.m.–8:00 p.m., Saturday 9:00 a.m.–6:00 p.m., and Sunday 10:00 a.m.–5:00 p.m. (all times Eastern). Outside those hours you can still leave a message in chat; we’ll follow up when we’re back online. Phone support isn’t offered—use chat for the fastest help with orders and policies."
+    }
+  ]
+}

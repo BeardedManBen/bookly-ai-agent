@@ -1,0 +1,10 @@
+# Required in Netlify UI (or team env): OPENAI_API_KEY, NEXT_PUBLIC_SUPABASE_URL,
+# NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY — same as .env locally.
+# Demo order dates: enabled automatically when NETLIFY=true (see lib/demo/order-dates.ts).
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
