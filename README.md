@@ -123,6 +123,7 @@ A **happy path** is a short, repeatable script: “do these steps and you’ll s
 |----------|---------|
 | `POST /api/session` | Email or **Continue as guest** → deterministic greeting + writes first assistant turn to `customer_history`. |
 | `POST /api/chat` | User message → OpenAI **`gpt-4o`** with tools → assistant reply; each turn appended to `customer_history`. |
+| `POST /api/feedback` | End-of-chat **CSAT** (resolved yes/no, 1–5 stars) → one `customer_history` row with `meta.kind: "csat"` (not shown to the LLM on the next session). |
 
 Trusted FAQ text lives in [`content/policies/topics.json`](content/policies/topics.json) and on the public [**/support**](/support) page.
 

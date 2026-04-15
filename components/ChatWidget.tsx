@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import type { SessionContextResponse } from "@/lib/types";
 import type { ToolDebugEvent } from "@/lib/types";
 
@@ -37,6 +37,15 @@ export function ChatWidget({ debug }: { debug: boolean }) {
   const [csatResolved, setCsatResolved] = useState<boolean | null>(null);
   const [csatRating, setCsatRating] = useState<number | null>(null);
   const [csatSending, setCsatSending] = useState(false);
+
+  const messagesListRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (phase !== "chat") return;
+    const el = messagesListRef.current;
+    if (!el) return;
+    el.scrollTo({ top: el.scrollHeight, behavior: "auto" });
+  }, [messages, sending, phase]);
 
   const resetAndClose = useCallback(() => {
     setSessionId(crypto.randomUUID());
@@ -364,7 +373,10 @@ export function ChatWidget({ debug }: { debug: boolean }) {
                   </div>
                 ) : null}
 
-                <div className="min-h-0 flex-1 space-y-3 overflow-y-auto p-4">
+                <div
+                  ref={messagesListRef}
+                  className="min-h-0 flex-1 space-y-3 overflow-y-auto p-4"
+                >
                   {messages.map((m, idx) => (
                     <div
                       key={`${idx}-${m.role}`}
@@ -377,6 +389,23 @@ export function ChatWidget({ debug }: { debug: boolean }) {
                       {m.content}
                     </div>
                   ))}
+                  {sending ? (
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className="mr-8 flex items-center gap-2 rounded-2xl border border-teal-100 bg-white/95 px-3 py-2 text-sm text-slate-500 shadow-sm"
+                    >
+                      <span
+                        className="flex gap-1"
+                        aria-hidden
+                      >
+                        <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-teal-500" />
+                        <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-teal-500 [animation-delay:150ms]" />
+                        <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-teal-500 [animation-delay:300ms]" />
+                      </span>
+                      <span>Cam is thinking…</span>
+                    </div>
+                  ) : null}
                 </div>
 
                 {debug ? (
