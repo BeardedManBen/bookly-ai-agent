@@ -2,7 +2,7 @@
 
 | Resource | What it is |
 |----------|------------|
-| [`AGENT_DESIGN.md`](AGENT_DESIGN.md) | Architecture / prompt design notes (stub + pointers to code). |
+| [`AGENT_DESIGN.md`](AGENT_DESIGN.md) | Agent design narrative (architecture, decisions, grounding, production tradeoffs) + pointers to code. |
 | [`QA_TEST_PLAN.md`](QA_TEST_PLAN.md) | Manual QA checklist for the prototype. |
 | [`aops/`](aops/README.md) | **Agent Operating Procedures** — plain-language runbooks (order tracking, returns, FAQ, chat session). |
 

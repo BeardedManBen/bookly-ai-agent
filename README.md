@@ -48,7 +48,7 @@ Bookly/
 ├── .env.example              ← Copy to .env locally; never commit real secrets
 ├── docs/
 │   ├── README.md             ← Index of docs (AOPs, QA, design notes)
-│   ├── AGENT_DESIGN.md       ← Architecture & prompt design (stub + code pointers)
+│   ├── AGENT_DESIGN.md       ← Agent design narrative (architecture, grounding, production tradeoffs)
 │   ├── QA_TEST_PLAN.md       ← Manual test checklist
 │   └── aops/                 ← Agent Operating Procedures (non-technical, human-readable)
 ├── content/
